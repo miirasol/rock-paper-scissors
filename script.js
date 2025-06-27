@@ -1,5 +1,4 @@
 function getComputerChoice() {
-	let result = "";
 	let num = Math.random() * 3;
 
 	if (num < 1) {
