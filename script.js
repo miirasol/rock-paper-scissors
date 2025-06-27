@@ -33,10 +33,11 @@ function getHumanChoice() {
 	return choice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+	let humanScore = 0;
+	let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+	function playRound(humanChoice, computerChoice) {
 	console.log(
 		`You went for ${humanChoice}, your opponent went for ${computerChoice}!`
 	);
@@ -85,7 +86,6 @@ function playRound(humanChoice, computerChoice) {
 	}
 }
 
-function playGame() {
 	for (let i = 0; i < 5; i++) {
 		playRound(getHumanChoice(), getComputerChoice());
 	}
