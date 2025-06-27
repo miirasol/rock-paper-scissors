@@ -14,7 +14,21 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-	let choice = prompt("Enter rock/paper/scissors");
+	
+    let choice = '';
+
+    while (true) {
+        choice = prompt('Enter rock/paper/scissors: ');
+
+        if (choice == 'rock' ||
+            choice == 'paper' ||
+            choice == 'scissors'
+        ) {
+            break;
+        }
+
+        console.log("Invalid input.");
+    }
 
 	return choice;
 }
@@ -25,15 +39,6 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
 	humanChoice = humanChoice.toLowerCase();
 	computerChoice = computerChoice.toLowerCase();
-
-	if (
-		humanChoice != "rock" &&
-		humanChoice != "paper" &&
-		humanChoice != "scissors"
-	) {
-		console.log("Invalid choice!");
-		return;
-	}
 
 	console.log(
 		`You went for ${humanChoice}, your opponent went for ${computerChoice}!`
