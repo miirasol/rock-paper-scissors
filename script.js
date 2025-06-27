@@ -3,14 +3,14 @@ function getComputerChoice() {
 	let num = Math.random() * 3;
 
 	if (num < 1) {
-		return (result = "rock");
+		return 'rock';
 	}
 
 	if (num < 2) {
-		return (result = "paper");
+		return 'paper';
 	}
 
-	return (result = "scissors");
+	return 'scissors';
 }
 
 function getHumanChoice() {
@@ -19,7 +19,7 @@ function getHumanChoice() {
 
     while (true) {
         choice = prompt('Enter rock/paper/scissors: ');
-
+		choice = choice.toLowerCase();
         if (choice == 'rock' ||
             choice == 'paper' ||
             choice == 'scissors'
@@ -37,9 +37,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-	humanChoice = humanChoice.toLowerCase();
-	computerChoice = computerChoice.toLowerCase();
-
 	console.log(
 		`You went for ${humanChoice}, your opponent went for ${computerChoice}!`
 	);
