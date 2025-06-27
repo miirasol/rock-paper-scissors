@@ -26,7 +26,18 @@ function playRound(humanChoice, computerChoice) {
 	humanChoice = humanChoice.toLowerCase();
 	computerChoice = computerChoice.toLowerCase();
 
-    console.log(`You went for ${humanChoice}, your opponent went for ${computerChoice}!`);
+	if (
+		humanChoice != "rock" &&
+		humanChoice != "paper" &&
+		humanChoice != "scissors"
+	) {
+		console.log("Invalid choice!");
+		return;
+	}
+
+	console.log(
+		`You went for ${humanChoice}, your opponent went for ${computerChoice}!`
+	);
 
 	if (humanChoice == computerChoice) {
 		console.log("It's a tie!");
@@ -52,7 +63,7 @@ function playRound(humanChoice, computerChoice) {
 			return;
 		}
 		if (computerChoice == "scissors") {
-			console.log("You lose! scissors beats paper.");
+			console.log("You lose! Scissors beats paper.");
 			computerScore++;
 			return;
 		}
@@ -73,20 +84,20 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
+	for (let i = 0; i < 5; i++) {
+		playRound(getHumanChoice(), getComputerChoice());
+	}
 
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer score: ${computerScore}`);
+	console.log(`Your score: ${humanScore}`);
+	console.log(`Computer score: ${computerScore}`);
 
-    if (humanScore > computerScore) {
-        console.log("You win!");
-    } else if (humanScore < computerScore) {
-        console.log("You lose!");
-    } else {
-        console.log("It's a tie.");
-    }
+	if (humanScore > computerScore) {
+		console.log("You win!");
+	} else if (humanScore < computerScore) {
+		console.log("You lose!");
+	} else {
+		console.log("It's a tie.");
+	}
 }
 
 playGame();
