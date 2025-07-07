@@ -13,8 +13,14 @@ body {
     background-color: rgba(156, 153, 153, 0.493);
 }
 
+header {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
 .buttons {
-    height: 100vh;
+    height: 80vh;
     padding-top: 10rem;
     display: flex; 
     justify-content: space-evenly;
