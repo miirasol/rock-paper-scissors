@@ -11,18 +11,36 @@
 
 body {
     background-color: rgba(156, 153, 153, 0.493);
+    font-family: "Press Start 2P";
+    height: 80vh;
 }
 
 header {
     display: flex;
-    margin-top: 1rem;
+    margin: 2rem;
     justify-content: center;
+    color: white;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 5rem;
+}
+
+.results {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+    font-size: 2em;
 }
 
 .buttons {
-    height: 80vh;
-    padding-top: 10rem;
     display: flex; 
+    margin-top: 10rem;
     justify-content: space-evenly;
     align-items: center;
 }
