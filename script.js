@@ -8,9 +8,9 @@ function playGame() {
 	
 	function getComputerChoice() {
 		let num = Math.random() * 3;
-		if (num < 1) return "rock";
-		if (num < 2) return "paper";
-		return "scissors";
+		if (num < 1) return "Rock";
+		if (num < 2) return "Paper";
+		return "Scissors";
 	}
 
 	function playRound(humanChoice, computerChoice) {
@@ -24,9 +24,9 @@ function playGame() {
 		}
 
 		if (
-			(humanChoice === "rock" && computerChoice === "scissors") ||
-			(humanChoice === "paper" && computerChoice === "rock") ||
-			(humanChoice === "scissors" && computerChoice === "paper")
+			(humanChoice === "Rock" && computerChoice === "Scissors") ||
+			(humanChoice === "Paper" && computerChoice === "Rock") ||
+			(humanChoice === "Scissors" && computerChoice === "Paper")
 		) {
 			battle.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
 			++human;
