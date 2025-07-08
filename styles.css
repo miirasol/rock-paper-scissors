@@ -60,3 +60,7 @@ header {
 	border: none;
 	background: none;
 }
+
+.buttons > button:hover {
+	text-shadow: 3px 3px white;
+}
