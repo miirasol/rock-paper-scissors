@@ -2,6 +2,10 @@ function playGame() {
 	let human = 0;
 	let computer = 0;
 
+	const battle = document.querySelector(".battle");
+	const playerScore = document.querySelector(".playerScore");
+	const computerScore = document.querySelector(".computerScore");
+	
 	function getComputerChoice() {
 		let num = Math.random() * 3;
 		if (num < 1) return "rock";
@@ -15,7 +19,8 @@ function playGame() {
 		);
 
 		if (humanChoice == computerChoice) {
-			console.log("It's a tie!");
+			battle.textContent = "It's a tie!";
+			return;
 		}
 
 		if (
@@ -23,10 +28,10 @@ function playGame() {
 			(humanChoice === "paper" && computerChoice === "rock") ||
 			(humanChoice === "scissors" && computerChoice === "paper")
 		) {
-			console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+			battle.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
 			++human;
 		} else {
-			console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+			battle.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
 			++computer;
 		}
 	}
@@ -38,8 +43,8 @@ function playGame() {
 	}
 
 	const buttons = document.querySelector(".buttons");
-
 	buttons.addEventListener("click", userChoice);
+
 }
 
 playGame();

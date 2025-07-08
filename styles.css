@@ -7,10 +7,11 @@
 * {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 body {
-    background-color: rgba(156, 153, 153, 0.493);
+    background-color: green;
     font-family: "Press Start 2P";
     height: 80vh;
 }
@@ -29,7 +30,8 @@ header {
     margin-top: 5rem;
 }
 
-.results {
+.results, 
+.battle {
     color: white;
     display: flex;
     justify-content: center;
@@ -37,6 +39,12 @@ header {
     margin: 2rem;
     font-size: 2em;
 }
+
+.battle {
+    height: 2rem;
+    font-size: 1.5rem;
+}
+
 
 .buttons {
     display: flex; 
