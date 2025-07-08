@@ -1,17 +1,3 @@
-function getComputerChoice() {
-	let num = Math.random() * 3;
-
-	if (num < 1) {
-		return "rock";
-	}
-
-	if (num < 2) {
-		return "paper";
-	}
-
-	return "scissors";
-}
-
 function getHumanChoice() {
 	let choice = "";
 
@@ -31,6 +17,13 @@ function getHumanChoice() {
 function playGame() {
 	let humanScore = 0;
 	let computerScore = 0;
+
+	function getComputerChoice() {
+		let num = Math.random() * 3;
+		if (num < 1) return "rock";
+		if (num < 2) return "paper";
+		return "scissors";
+	}
 
 	function playRound(humanChoice, computerChoice) {
 		console.log(
