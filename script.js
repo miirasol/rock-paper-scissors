@@ -1,19 +1,3 @@
-function getHumanChoice() {
-	let choice = "";
-
-	while (true) {
-		choice = prompt("Enter rock/paper/scissors: ");
-		choice = choice.toLowerCase();
-		if (choice == "rock" || choice == "paper" || choice == "scissors") {
-			break;
-		}
-
-		console.log("Invalid input.");
-	}
-
-	return choice;
-}
-
 function playGame() {
 	let humanScore = 0;
 	let computerScore = 0;
@@ -45,6 +29,12 @@ function playGame() {
 			console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
 			++computerScore;
 		}
+	}
+
+	function userChoice(event) {
+		const humanChoice = event.target.id;
+		const computerChoice = getComputerChoice();
+		playRound(humanChoice, computerChoice);
 	}
 
 	console.log(`Your score: ${humanScore}`);
