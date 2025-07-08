@@ -37,16 +37,12 @@ function playGame() {
 		playRound(humanChoice, computerChoice);
 	}
 
-	console.log(`Your score: ${humanScore}`);
-	console.log(`Computer score: ${computerScore}`);
+	const rock = document.querySelector("#rock");
+	const paper = document.querySelector("#paper");
+	const scissors = document.querySelector("#scissors");
+	const buttons = document.querySelector(".buttons");
 
-	if (humanScore > computerScore) {
-		console.log("You win!");
-	} else if (humanScore < computerScore) {
-		console.log("You lose!");
-	} else {
-		console.log("It's a tie.");
-	}
+	buttons.addEventListener("click", userChoice);
 }
 
 playGame();
