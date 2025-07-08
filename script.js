@@ -29,10 +29,10 @@ function playGame() {
 			(humanChoice === "Scissors" && computerChoice === "Paper")
 		) {
 			battle.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
-			++human;
+			playerScore.textContent = `🧑 ${++human}`;
 		} else {
 			battle.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
-			++computer;
+			computerScore.textContent = `${++computer} 🤖`;
 		}
 	}
 
