@@ -1,6 +1,6 @@
 function playGame() {
-	let humanScore = 0;
-	let computerScore = 0;
+	let human = 0;
+	let computer = 0;
 
 	function getComputerChoice() {
 		let num = Math.random() * 3;
@@ -24,10 +24,10 @@ function playGame() {
 			(humanChoice === "scissors" && computerChoice === "paper")
 		) {
 			console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-			++humanScore;
+			++human;
 		} else {
 			console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
-			++computerScore;
+			++computer;
 		}
 	}
 
