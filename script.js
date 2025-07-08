@@ -37,9 +37,6 @@ function playGame() {
 		playRound(humanChoice, computerChoice);
 	}
 
-	const rock = document.querySelector("#rock");
-	const paper = document.querySelector("#paper");
-	const scissors = document.querySelector("#scissors");
 	const buttons = document.querySelector(".buttons");
 
 	buttons.addEventListener("click", userChoice);
