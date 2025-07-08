@@ -2,6 +2,8 @@ function playGame() {
 	let human = 0;
 	let computer = 0;
 
+	const WINNING_SCORE = 5;
+
 	const battle = document.querySelector(".battle");
 	const playerScore = document.querySelector(".playerScore");
 	const computerScore = document.querySelector(".computerScore");
@@ -34,12 +36,27 @@ function playGame() {
 			battle.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
 			computerScore.textContent = `${++computer} 🤖`;
 		}
+		
+		if (human === WINNING_SCORE || computer === WINNING_SCORE) {
+			if (human === WINNING_SCORE) {
+				battle.textContent = "🎉 Game over! You win!";
+			} else {
+				battle.textContent = "💀 Game over! You lose!";
+			}
+			disableButtons();
+		}
 	}
 
 	function userChoice(event) {
+		if (event.target.tagName !== "BUTTON") return;
 		const humanChoice = event.target.id;
 		const computerChoice = getComputerChoice();
 		playRound(humanChoice, computerChoice);
+	}
+
+	function disableButtons() {
+		const allButtons = document.querySelectorAll(".buttons button");
+		allButtons.forEach(button => button.disabled = true);
 	}
 
 	const buttons = document.querySelector(".buttons");
